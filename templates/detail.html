@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+	<title>Detial</title>
+{% endblock %}
+	
+{% block content %}
+    <div class="tm-section tm-container-inner" style="margin-top:50px;">
+				<div class="row">
+					<div class="col-md-6">
+						<figure class="tm-description-figure">
+							<img src="/media/{{data.image}}" alt="Image" class="img-fluid" />
+						</figure>
+					</div>
+					<div class="col-md-6">
+						<div class="tm-description-box"> 
+							<h4 class="tm-gallery-title">{{ data.name }}</h4>
+							<h3>{{ data.code }}</h3>
+                            <p class="tm-mb-45">{{ data.description }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}
