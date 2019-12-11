@@ -14,6 +14,7 @@ class Product(models.Model):
     code = models.CharField(max_length=64)
     image = models.ImageField(upload_to='profile/', default='profile/default.png', null=True)
     producttype = models.ForeignKey(ProductType, null=True, on_delete=models.SET_NULL)
+    
     def __str__(self):
         return self.name
 

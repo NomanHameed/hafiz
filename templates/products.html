@@ -1,0 +1,17 @@
+{% for product in data %}
+
+    <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+        <figure>
+            <img src="/media/{{ product.image }}" alt="Image" class="img-fluid tm-gallery-img" />
+            <figcaption>
+                <h4 class="tm-gallery-title"><a href="/detail/{{ product.id }}">{{ product.name }}</a></h4>
+                <div >Code: {{ product.code }}</div>
+                <p class="tm-gallery-description">{{ product.description|truncatewords:8|linebreaks }}
+                <a href="/detail/{{ product.id }}">read more</a>
+                </p>
+
+            </figcaption>
+        </figure>
+    </article>
+
+{% endfor %}
