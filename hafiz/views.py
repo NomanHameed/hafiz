@@ -52,5 +52,7 @@ def detail(request, id):
     if id:
         obj = Product.objects.filter(id=id)
         obj = list(obj.values('id','name','description','code','image'))
-        context = {'data': obj[0]}
-        return render(request,template_name, context)
+        obj_all = Product.objects.all().order_by('-id')[:4]
+        obj_all = list(obj_all.values('id','name','description','image', 'code'))
+        # obj_all = Paginator(obj_all, 8)
+        return render(request,template_name, {'single_data': obj[0], 'data': obj_all})

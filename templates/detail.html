@@ -4,20 +4,43 @@
 {% endblock %}
 	
 {% block content %}
-    <div class="tm-section tm-container-inner" style="margin-top:50px;">
-				<div class="row">
-					<div class="col-md-6">
-						<figure class="tm-description-figure">
-							<img src="/media/{{data.image}}" alt="Image" class="img-fluid" />
-						</figure>
-					</div>
-					<div class="col-md-6">
-						<div class="tm-description-box"> 
-							<h4 class="tm-gallery-title">{{ data.name }}</h4>
-							<h3>{{ data.code }}</h3>
-                            <p class="tm-mb-45">{{ data.description }}</p>
-						</div>
-					</div>
+	<div class="tm-section tm-container-inner" style="margin-top:50px;">
+		<div class="row">
+			<div class="col-md-6">
+				<figure class="tm-description-figure">
+					<img src="/media/{{single_data.image}}" alt="Image" class="img-fluid" />
+				</figure>
+			</div>
+			<div class="col-md-6">
+				<div class="tm-description-box"> 
+					<h4 class="tm-gallery-title">{{ single_data.name }}</h4>
+					<h3>{{ single_data.code }}</h3>
+					<p class="tm-mb-45">{{ single_data.description }}</p>
 				</div>
 			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row tm-gallery" style="margin-top:50px">
+		<div id="tm-gallery-page-pizza" class="tm-gallery-page table_body">			
+		{% for product in data %}
+
+			<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"  style="padding-bottom:10px;">
+				<figure>
+					<img src="/media/{{ product.image }}" alt="Image" class="img-fluid tm-gallery-img" />
+					<figcaption>
+						<h4 class="tm-gallery-title"><a href="/detail/{{ product.id }}">{{ product.name }}</a></h4>
+						<div >Code: {{ product.code }}</div>
+						<p class="tm-gallery-description">{{ product.description|truncatewords:8|linebreaks }}
+						<a href="/detail/{{ product.id }}">read more</a>
+						</p>
+
+					</figcaption>
+				</figure>
+			</article>
+
+		{% endfor %}
+
+		</div>
+    </div>
 {% endblock %}
