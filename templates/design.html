@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+	<title>All Design</title>
+{% endblock %}
+	
+{% block content %}
+    <div style="margin:10px">
+        <h4>All Designs</h4> 
+    </div>
+    
+    <div class="row tm-gallery" style="margin-top:50px">
+        {% include 'products.html' %}
+    </div>
+{% endblock %}

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from hafiz.views import index, about, contact, detail,index_type
+from hafiz.views import index, about, contact, detail,index_type, design
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,7 @@ urlpatterns = [
     path('type/<str:post_type>/', index_type, name="get_list"),
     path('detail/<int:id>', detail),
     path('about/', about),
-    path('contact/', contact)
+    path('contact/', contact),
+    path('design/', design)
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
