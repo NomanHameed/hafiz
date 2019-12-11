@@ -31,6 +31,7 @@ class ContactUs(models.Model):
     facebook = models.CharField(max_length = 64, null=True)
     twitter = models.CharField(max_length = 64, null=True)
     instgram = models.CharField(max_length = 64, null=True)
+    map = models.TextField(null=True)
 
     def __str__(self):
         return self.title

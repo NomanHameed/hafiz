@@ -52,7 +52,7 @@ def about(request):
 def contact(request):
     template_name = 'contact.html'
     obj = ContactUs.objects.all()
-    obj = list(obj.values('title','description','address','mobile','email','facebook','twitter','instgram'))
+    obj = list(obj.values('title','description','address','mobile','email','facebook','twitter','instgram','map'))
     obj = obj[0]
 
     return render(request,template_name,{'data': obj})
