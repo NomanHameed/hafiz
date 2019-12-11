@@ -12,10 +12,10 @@
 			
 			<div class="tm-paging-links">
 				<nav>
-					<ul>
-						<li class="tm-paging-item" id="all"><a href="#" class="tm-paging-link active">All</a></li>
-						<li class="tm-paging-item" id="woven"><a href="#" class="tm-paging-link">Woven</a></li>
-						<li class="tm-paging-item" id="print"><a href="#" class="tm-paging-link">Printed</a></li>
+					<ul class="appDetails">
+						<li class="tm-paging-item"><button id="all" class="tm-paging-link active">All</button></li>
+						<li class="tm-paging-item"><button id="woven"  class="tm-paging-link">Woven</button></li>
+						<li class="tm-paging-item"><button id="print" class="tm-paging-link">Printed</button></li>
 					</ul>
 				</nav>
 			</div>
@@ -23,9 +23,9 @@
 			<!-- Gallery -->
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
-				<div id="tm-gallery-page-pizza" class="tm-gallery-page table_body">
+
 					{% include 'products.html' %}
-                </div> <!-- gallery page 1 -->
+
 				
 
 			</div>
@@ -49,5 +49,4 @@
 
 {% endblock %}
 {% block footer %}
-
 {% endblock %}
