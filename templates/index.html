@@ -6,8 +6,8 @@
 {% block content %}
 <main>
 			<header class="row tm-welcome-section">
-				<h2 class="col-12 text-center tm-section-title">Welcome to Hafiz Bross</h2>
-				<p class="col-12 text-center">Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus. Populo necessitatibus quo cu, eos cetero vivendum cu. Vim fuisset definiebas signiferumque ei, nam persius meliore principes et, no mel facete feugait voluptatibus.</p>
+				<h2 class="col-12 text-center tm-section-title">{{ home.banner_title }}</h2>
+				<p class="col-12 text-center">{{ home.banner_details }}</p>
 			</header>
 			
 			<div class="tm-paging-links">
@@ -29,14 +29,13 @@
 				<div class="row">
 					<div class="col-md-6">
 						<figure class="tm-description-figure">
-							<img src="/static/img/img-01.jpg" alt="Image" class="img-fluid" />
+							<img src="media/{{ home.image }}" alt="Image" class="img-fluid" />
 						</figure>
 					</div>
 					<div class="col-md-6">
 						<div class="tm-description-box"> 
-							<h4 class="tm-gallery-title">Maecenas nulla neque</h4>
-							<p class="tm-mb-45">Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus.Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus.</p>
-						<!--<a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a> -->
+							<h4 class="tm-gallery-title">{{ home.detail_heading }}</h4>
+							<p class="tm-mb-45">{{ home.details }}</p>
 						</div>
 					</div>
 				</div>

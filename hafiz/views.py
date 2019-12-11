@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from desktop.models import Product
+from desktop.models import Product, Home, aboutUs, ContactUs
 from django.http import HttpResponse, JsonResponse
 import json
 from django.core.paginator import Paginator
@@ -9,11 +9,14 @@ def index(request):
     context = {}
     template_name = 'index.html'
     obj = Product.objects.all()
+    home_items = Home.objects.all()
+    home_items = list(home_items.values('banner_title','banner_details','detail_heading','details','image'))
+    home_items = home_items[0];
     obj = list(obj.values('id','name','description','image', 'code'))
     paginator = Paginator(obj, 8)
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
-    return render(request,template_name, { 'data': contacts })
+    return render(request,template_name, { 'data': contacts , 'home': home_items})
 
 
 
@@ -41,11 +44,18 @@ def design(request):
 
 def about(request):
     template_name = 'about.html'
-    return render(request,template_name)
+    obj = aboutUs.objects.all()
+    obj = list(obj.values('title','description','history_title','history_description','image'))
+    obj = obj[0]
+    return render(request,template_name,{'data': obj})
 
 def contact(request):
     template_name = 'contact.html'
-    return render(request,template_name)
+    obj = ContactUs.objects.all()
+    obj = list(obj.values('title','description','address','mobile','email','facebook','twitter','instgram'))
+    obj = obj[0]
+
+    return render(request,template_name,{'data': obj})
 
 def detail(request, id):
     template_name = 'detail.html'

@@ -6,8 +6,8 @@
 {% block content %}
 		<main>
 			<header class="row tm-welcome-section">
-				<h2 class="col-12 text-center tm-section-title">Contact Page</h2>
-				<p class="col-12 text-center">You may use Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus.Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus.</p>
+				<h2 class="col-12 text-center tm-section-title">{{ data.title }}</h2>
+				<p class="col-12 text-center">{{ data.description }}</p>
 			</header>
 
 			<div class="tm-container-inner-2 tm-contact-section">
@@ -37,18 +37,18 @@
 						<div class="tm-address-box">
 							<h4 class="tm-info-title tm-text-success">Our Address</h4>
 							<address>
-Lorem ipsum dolor sit amet, civibus vivendum an pri, aperiam accusam omnesque ut mel. Mei eu meis salutatus.
+								{{ data.address }}
 							</address>
 							<a href="tel:080-090-0110" class="tm-contact-link">
-								<i class="fas fa-phone tm-contact-icon"></i>+923-000-0110-00
+								<i class="fas fa-phone tm-contact-icon"></i>{{ data.mobile }}
 							</a>
 							<a href="mailto:nomanbutt8322@gmail.com" class="tm-contact-link">
-								<i class="fas fa-envelope tm-contact-icon"></i>nomanbutt8322@gmail.com
+								<i class="fas fa-envelope tm-contact-icon"></i>{{ data.email }}
 							</a>
 							<div class="tm-contact-social">
-								<a href="https://fb.com/" class="tm-social-link"><i class="fab fa-facebook tm-social-icon"></i></a>
-								<a href="#" class="tm-social-link"><i class="fab fa-twitter tm-social-icon"></i></a>
-								<a href="#" class="tm-social-link"><i class="fab fa-instagram tm-social-icon"></i></a>
+								<a href="{{ data.facebook }}" class="tm-social-link"><i class="fab fa-facebook tm-social-icon"></i></a>
+								<a href="{{ data.twitter }}" class="tm-social-link"><i class="fab fa-twitter tm-social-icon"></i></a>
+								<a href="{{ data.instgram }}" class="tm-social-link"><i class="fab fa-instagram tm-social-icon"></i></a>
 							</div>
 						</div>
 					</div>
